@@ -9,7 +9,6 @@ type CollegeRequest {
 }
 
 type CollegeResponse {
-	Message string `json:"message"`
 }
 
 service college-api {

@@ -12,5 +12,4 @@ type CollegeRequest struct {
 }
 
 type CollegeResponse struct {
-	Message string `json:"message"`
 }
