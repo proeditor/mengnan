@@ -1,0 +1,18 @@
+type CollegeRequest {
+	Id       int64  `path:"id"`
+	Name     string `path:"name"`
+	Code     string `path:"code"`
+	Level    int8   `path:"level"`
+	Province string `path:"province"`
+	City     string `path:"city"`
+	District string `path:"district"`
+}
+
+type CollegeResponse {
+	Message string `json:"message"`
+}
+
+service college-api {
+	@handler CollegeHandler
+	post /college (CollegeRequest) returns (CollegeResponse);
+}
