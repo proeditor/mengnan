@@ -6,17 +6,17 @@ package college
 import (
 	"context"
 
-	"rpc/college/rpc"
+	"collegerpc/collegerpc"
 
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"
 )
 
 type (
-	CollegeAddRequest     = rpc.CollegeAddRequest
-	CollegeAddResponse    = rpc.CollegeAddResponse
-	CollegeUpdateRequest  = rpc.CollegeUpdateRequest
-	CollegeUpdateResponse = rpc.CollegeUpdateResponse
+	CollegeAddRequest     = collegerpc.CollegeAddRequest
+	CollegeAddResponse    = collegerpc.CollegeAddResponse
+	CollegeUpdateRequest  = collegerpc.CollegeUpdateRequest
+	CollegeUpdateResponse = collegerpc.CollegeUpdateResponse
 
 	College interface {
 		AddCollege(ctx context.Context, in *CollegeAddRequest, opts ...grpc.CallOption) (*CollegeAddResponse, error)
@@ -35,11 +35,11 @@ func NewCollege(cli zrpc.Client) College {
 }
 
 func (m *defaultCollege) AddCollege(ctx context.Context, in *CollegeAddRequest, opts ...grpc.CallOption) (*CollegeAddResponse, error) {
-	client := rpc.NewCollegeClient(m.cli.Conn())
+	client := collegerpc.NewCollegeClient(m.cli.Conn())
 	return client.AddCollege(ctx, in, opts...)
 }
 
 func (m *defaultCollege) UpdateCollege(ctx context.Context, in *CollegeUpdateRequest, opts ...grpc.CallOption) (*CollegeUpdateResponse, error) {
-	client := rpc.NewCollegeClient(m.cli.Conn())
+	client := collegerpc.NewCollegeClient(m.cli.Conn())
 	return client.UpdateCollege(ctx, in, opts...)
 }

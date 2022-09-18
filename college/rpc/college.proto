@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package add;
-option go_package = "./college/rpc";
+option go_package = "./rpc";
 
 message CollegeAddRequest {
   int64  Id = 1;
@@ -17,8 +17,6 @@ message CollegeAddRequest {
 message CollegeAddResponse {
 
 }
-
-
 
 message CollegeUpdateRequest {
   int64  Id = 1;

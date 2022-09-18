@@ -26,6 +26,6 @@ func main() {
 
 	handler.RegisterHandlers(server, ctx)
 
-	fmt.Printf("开始启动College服务 at %s:%d...\n", c.Host, c.Port)
+	fmt.Printf("开始启动 college api 服务 at %s:%d...\n", c.Host, c.Port)
 	server.Start()
 }

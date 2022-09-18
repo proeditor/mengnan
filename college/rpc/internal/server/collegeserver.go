@@ -6,14 +6,14 @@ package server
 import (
 	"context"
 
-	"rpc/college/rpc"
-	"rpc/internal/logic"
-	"rpc/internal/svc"
+	"collegerpc/collegerpc"
+	"collegerpc/internal/logic"
+	"collegerpc/internal/svc"
 )
 
 type CollegeServer struct {
 	svcCtx *svc.ServiceContext
-	rpc.UnimplementedCollegeServer
+	collegerpc.UnimplementedCollegeServer
 }
 
 func NewCollegeServer(svcCtx *svc.ServiceContext) *CollegeServer {
@@ -22,12 +22,12 @@ func NewCollegeServer(svcCtx *svc.ServiceContext) *CollegeServer {
 	}
 }
 
-func (s *CollegeServer) AddCollege(ctx context.Context, in *rpc.CollegeAddRequest) (*rpc.CollegeAddResponse, error) {
+func (s *CollegeServer) AddCollege(ctx context.Context, in *collegerpc.CollegeAddRequest) (*collegerpc.CollegeAddResponse, error) {
 	l := logic.NewAddCollegeLogic(ctx, s.svcCtx)
 	return l.AddCollege(in)
 }
 
-func (s *CollegeServer) UpdateCollege(ctx context.Context, in *rpc.CollegeUpdateRequest) (*rpc.CollegeUpdateResponse, error) {
+func (s *CollegeServer) UpdateCollege(ctx context.Context, in *collegerpc.CollegeUpdateRequest) (*collegerpc.CollegeUpdateResponse, error) {
 	l := logic.NewUpdateCollegeLogic(ctx, s.svcCtx)
 	return l.UpdateCollege(in)
 }

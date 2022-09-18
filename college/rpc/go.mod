@@ -1,4 +1,4 @@
-module rpc
+module github.com/proeditor/mengnan/college/rpc
 
 go 1.19
 

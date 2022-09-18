@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 
-	"rpc/college/rpc"
-	"rpc/internal/config"
-	"rpc/internal/server"
-	"rpc/internal/svc"
+	"collegerpc/collegerpc"
+	"collegerpc/internal/config"
+	"collegerpc/internal/server"
+	"collegerpc/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/service"
@@ -26,7 +26,7 @@ func main() {
 	ctx := svc.NewServiceContext(c)
 
 	s := zrpc.MustNewServer(c.RpcServerConf, func(grpcServer *grpc.Server) {
-		rpc.RegisterCollegeServer(grpcServer, server.NewCollegeServer(ctx))
+		collegerpc.RegisterCollegeServer(grpcServer, server.NewCollegeServer(ctx))
 
 		if c.Mode == service.DevMode || c.Mode == service.TestMode {
 			reflection.Register(grpcServer)

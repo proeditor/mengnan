@@ -4,7 +4,7 @@
 // - protoc             v3.17.3
 // source: college.proto
 
-package rpc
+package collegerpc
 
 import (
 	context "context"

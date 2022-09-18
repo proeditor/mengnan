@@ -3,8 +3,8 @@ package logic
 import (
 	"context"
 
-	"rpc/college/rpc"
-	"rpc/internal/svc"
+	"collegerpc/collegerpc"
+	"collegerpc/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -23,8 +23,8 @@ func NewAddCollegeLogic(ctx context.Context, svcCtx *svc.ServiceContext) *AddCol
 	}
 }
 
-func (l *AddCollegeLogic) AddCollege(in *rpc.CollegeAddRequest) (*rpc.CollegeAddResponse, error) {
+func (l *AddCollegeLogic) AddCollege(in *collegerpc.CollegeAddRequest) (*collegerpc.CollegeAddResponse, error) {
 	// todo: add your logic here and delete this line
 
-	return &rpc.CollegeAddResponse{}, nil
+	return &collegerpc.CollegeAddResponse{}, nil
 }
