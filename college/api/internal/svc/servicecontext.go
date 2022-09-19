@@ -2,7 +2,7 @@ package svc
 
 import (
 	"college/api/internal/config"
-	"collegerpc/college"
+	"github.com/proeditor/mengnan/college/rpc/college"
 	"github.com/zeromicro/go-zero/zrpc"
 )
 

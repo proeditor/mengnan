@@ -4,7 +4,7 @@
 // - protoc             v3.17.3
 // source: college.proto
 
-package collegerpc
+package college_rpc
 
 import (
 	context "context"
@@ -22,8 +22,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CollegeClient interface {
-	AddCollege(ctx context.Context, in *CollegeAddRequest, opts ...grpc.CallOption) (*CollegeAddResponse, error)
-	UpdateCollege(ctx context.Context, in *CollegeUpdateRequest, opts ...grpc.CallOption) (*CollegeUpdateResponse, error)
+	AddCollege(ctx context.Context, in *AddCollegeRequest, opts ...grpc.CallOption) (*AddCollegeResponse, error)
+	UpdateCollege(ctx context.Context, in *UpdateCollegeRequest, opts ...grpc.CallOption) (*UpdateCollegeResponse, error)
 }
 
 type collegeClient struct {
@@ -34,8 +34,8 @@ func NewCollegeClient(cc grpc.ClientConnInterface) CollegeClient {
 	return &collegeClient{cc}
 }
 
-func (c *collegeClient) AddCollege(ctx context.Context, in *CollegeAddRequest, opts ...grpc.CallOption) (*CollegeAddResponse, error) {
-	out := new(CollegeAddResponse)
+func (c *collegeClient) AddCollege(ctx context.Context, in *AddCollegeRequest, opts ...grpc.CallOption) (*AddCollegeResponse, error) {
+	out := new(AddCollegeResponse)
 	err := c.cc.Invoke(ctx, "/add.College/AddCollege", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -43,8 +43,8 @@ func (c *collegeClient) AddCollege(ctx context.Context, in *CollegeAddRequest, o
 	return out, nil
 }
 
-func (c *collegeClient) UpdateCollege(ctx context.Context, in *CollegeUpdateRequest, opts ...grpc.CallOption) (*CollegeUpdateResponse, error) {
-	out := new(CollegeUpdateResponse)
+func (c *collegeClient) UpdateCollege(ctx context.Context, in *UpdateCollegeRequest, opts ...grpc.CallOption) (*UpdateCollegeResponse, error) {
+	out := new(UpdateCollegeResponse)
 	err := c.cc.Invoke(ctx, "/add.College/UpdateCollege", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -56,8 +56,8 @@ func (c *collegeClient) UpdateCollege(ctx context.Context, in *CollegeUpdateRequ
 // All implementations must embed UnimplementedCollegeServer
 // for forward compatibility
 type CollegeServer interface {
-	AddCollege(context.Context, *CollegeAddRequest) (*CollegeAddResponse, error)
-	UpdateCollege(context.Context, *CollegeUpdateRequest) (*CollegeUpdateResponse, error)
+	AddCollege(context.Context, *AddCollegeRequest) (*AddCollegeResponse, error)
+	UpdateCollege(context.Context, *UpdateCollegeRequest) (*UpdateCollegeResponse, error)
 	mustEmbedUnimplementedCollegeServer()
 }
 
@@ -65,10 +65,10 @@ type CollegeServer interface {
 type UnimplementedCollegeServer struct {
 }
 
-func (UnimplementedCollegeServer) AddCollege(context.Context, *CollegeAddRequest) (*CollegeAddResponse, error) {
+func (UnimplementedCollegeServer) AddCollege(context.Context, *AddCollegeRequest) (*AddCollegeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddCollege not implemented")
 }
-func (UnimplementedCollegeServer) UpdateCollege(context.Context, *CollegeUpdateRequest) (*CollegeUpdateResponse, error) {
+func (UnimplementedCollegeServer) UpdateCollege(context.Context, *UpdateCollegeRequest) (*UpdateCollegeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCollege not implemented")
 }
 func (UnimplementedCollegeServer) mustEmbedUnimplementedCollegeServer() {}
@@ -85,7 +85,7 @@ func RegisterCollegeServer(s grpc.ServiceRegistrar, srv CollegeServer) {
 }
 
 func _College_AddCollege_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CollegeAddRequest)
+	in := new(AddCollegeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -97,13 +97,13 @@ func _College_AddCollege_Handler(srv interface{}, ctx context.Context, dec func(
 		FullMethod: "/add.College/AddCollege",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CollegeServer).AddCollege(ctx, req.(*CollegeAddRequest))
+		return srv.(CollegeServer).AddCollege(ctx, req.(*AddCollegeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _College_UpdateCollege_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CollegeUpdateRequest)
+	in := new(UpdateCollegeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -115,7 +115,7 @@ func _College_UpdateCollege_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: "/add.College/UpdateCollege",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CollegeServer).UpdateCollege(ctx, req.(*CollegeUpdateRequest))
+		return srv.(CollegeServer).UpdateCollege(ctx, req.(*UpdateCollegeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

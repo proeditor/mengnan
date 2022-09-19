@@ -1,6 +1,6 @@
 package svc
 
-import "collegerpc/internal/config"
+import "github.com/proeditor/mengnan/college/rpc/internal/config"
 
 type ServiceContext struct {
 	Config config.Config

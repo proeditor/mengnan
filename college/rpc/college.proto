@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 package add;
-option go_package = "./rpc";
+option go_package = "./college-rpc";
 
-message CollegeAddRequest {
+message AddCollegeRequest {
   int64  Id = 1;
   string Name = 2;
   string Code = 3;
@@ -14,11 +14,11 @@ message CollegeAddRequest {
   string CreateBy = 8;
 }
 
-message CollegeAddResponse {
+message AddCollegeResponse {
 
 }
 
-message CollegeUpdateRequest {
+message UpdateCollegeRequest {
   int64  Id = 1;
   string Name = 2;
   string Code = 3;
@@ -29,10 +29,10 @@ message CollegeUpdateRequest {
   string LastModifyBy = 8;
 }
 
-message CollegeUpdateResponse {
+message UpdateCollegeResponse {
 
 }
 service College {
-  rpc AddCollege(CollegeAddRequest) returns(CollegeAddResponse);
-  rpc UpdateCollege(CollegeUpdateRequest) returns(CollegeUpdateResponse);
+  rpc AddCollege(AddCollegeRequest) returns(AddCollegeResponse);
+  rpc UpdateCollege(UpdateCollegeRequest) returns(UpdateCollegeResponse);
 }

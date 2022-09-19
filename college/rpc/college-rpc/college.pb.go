@@ -4,7 +4,7 @@
 // 	protoc        v3.17.3
 // source: college.proto
 
-package collegerpc
+package college_rpc
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -20,7 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type CollegeAddRequest struct {
+type AddCollegeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -35,8 +35,8 @@ type CollegeAddRequest struct {
 	CreateBy string `protobuf:"bytes,8,opt,name=CreateBy,proto3" json:"CreateBy,omitempty"`
 }
 
-func (x *CollegeAddRequest) Reset() {
-	*x = CollegeAddRequest{}
+func (x *AddCollegeRequest) Reset() {
+	*x = AddCollegeRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_college_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -44,13 +44,13 @@ func (x *CollegeAddRequest) Reset() {
 	}
 }
 
-func (x *CollegeAddRequest) String() string {
+func (x *AddCollegeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CollegeAddRequest) ProtoMessage() {}
+func (*AddCollegeRequest) ProtoMessage() {}
 
-func (x *CollegeAddRequest) ProtoReflect() protoreflect.Message {
+func (x *AddCollegeRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_college_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -62,75 +62,75 @@ func (x *CollegeAddRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CollegeAddRequest.ProtoReflect.Descriptor instead.
-func (*CollegeAddRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use AddCollegeRequest.ProtoReflect.Descriptor instead.
+func (*AddCollegeRequest) Descriptor() ([]byte, []int) {
 	return file_college_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CollegeAddRequest) GetId() int64 {
+func (x *AddCollegeRequest) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *CollegeAddRequest) GetName() string {
+func (x *AddCollegeRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *CollegeAddRequest) GetCode() string {
+func (x *AddCollegeRequest) GetCode() string {
 	if x != nil {
 		return x.Code
 	}
 	return ""
 }
 
-func (x *CollegeAddRequest) GetLevel() int32 {
+func (x *AddCollegeRequest) GetLevel() int32 {
 	if x != nil {
 		return x.Level
 	}
 	return 0
 }
 
-func (x *CollegeAddRequest) GetProvince() string {
+func (x *AddCollegeRequest) GetProvince() string {
 	if x != nil {
 		return x.Province
 	}
 	return ""
 }
 
-func (x *CollegeAddRequest) GetCity() string {
+func (x *AddCollegeRequest) GetCity() string {
 	if x != nil {
 		return x.City
 	}
 	return ""
 }
 
-func (x *CollegeAddRequest) GetDistrict() string {
+func (x *AddCollegeRequest) GetDistrict() string {
 	if x != nil {
 		return x.District
 	}
 	return ""
 }
 
-func (x *CollegeAddRequest) GetCreateBy() string {
+func (x *AddCollegeRequest) GetCreateBy() string {
 	if x != nil {
 		return x.CreateBy
 	}
 	return ""
 }
 
-type CollegeAddResponse struct {
+type AddCollegeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *CollegeAddResponse) Reset() {
-	*x = CollegeAddResponse{}
+func (x *AddCollegeResponse) Reset() {
+	*x = AddCollegeResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_college_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -138,13 +138,13 @@ func (x *CollegeAddResponse) Reset() {
 	}
 }
 
-func (x *CollegeAddResponse) String() string {
+func (x *AddCollegeResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CollegeAddResponse) ProtoMessage() {}
+func (*AddCollegeResponse) ProtoMessage() {}
 
-func (x *CollegeAddResponse) ProtoReflect() protoreflect.Message {
+func (x *AddCollegeResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_college_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -156,12 +156,12 @@ func (x *CollegeAddResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CollegeAddResponse.ProtoReflect.Descriptor instead.
-func (*CollegeAddResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use AddCollegeResponse.ProtoReflect.Descriptor instead.
+func (*AddCollegeResponse) Descriptor() ([]byte, []int) {
 	return file_college_proto_rawDescGZIP(), []int{1}
 }
 
-type CollegeUpdateRequest struct {
+type UpdateCollegeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -176,8 +176,8 @@ type CollegeUpdateRequest struct {
 	LastModifyBy string `protobuf:"bytes,8,opt,name=LastModifyBy,proto3" json:"LastModifyBy,omitempty"`
 }
 
-func (x *CollegeUpdateRequest) Reset() {
-	*x = CollegeUpdateRequest{}
+func (x *UpdateCollegeRequest) Reset() {
+	*x = UpdateCollegeRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_college_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -185,13 +185,13 @@ func (x *CollegeUpdateRequest) Reset() {
 	}
 }
 
-func (x *CollegeUpdateRequest) String() string {
+func (x *UpdateCollegeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CollegeUpdateRequest) ProtoMessage() {}
+func (*UpdateCollegeRequest) ProtoMessage() {}
 
-func (x *CollegeUpdateRequest) ProtoReflect() protoreflect.Message {
+func (x *UpdateCollegeRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_college_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -203,75 +203,75 @@ func (x *CollegeUpdateRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CollegeUpdateRequest.ProtoReflect.Descriptor instead.
-func (*CollegeUpdateRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateCollegeRequest.ProtoReflect.Descriptor instead.
+func (*UpdateCollegeRequest) Descriptor() ([]byte, []int) {
 	return file_college_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *CollegeUpdateRequest) GetId() int64 {
+func (x *UpdateCollegeRequest) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *CollegeUpdateRequest) GetName() string {
+func (x *UpdateCollegeRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *CollegeUpdateRequest) GetCode() string {
+func (x *UpdateCollegeRequest) GetCode() string {
 	if x != nil {
 		return x.Code
 	}
 	return ""
 }
 
-func (x *CollegeUpdateRequest) GetLevel() int32 {
+func (x *UpdateCollegeRequest) GetLevel() int32 {
 	if x != nil {
 		return x.Level
 	}
 	return 0
 }
 
-func (x *CollegeUpdateRequest) GetProvince() string {
+func (x *UpdateCollegeRequest) GetProvince() string {
 	if x != nil {
 		return x.Province
 	}
 	return ""
 }
 
-func (x *CollegeUpdateRequest) GetCity() string {
+func (x *UpdateCollegeRequest) GetCity() string {
 	if x != nil {
 		return x.City
 	}
 	return ""
 }
 
-func (x *CollegeUpdateRequest) GetDistrict() string {
+func (x *UpdateCollegeRequest) GetDistrict() string {
 	if x != nil {
 		return x.District
 	}
 	return ""
 }
 
-func (x *CollegeUpdateRequest) GetLastModifyBy() string {
+func (x *UpdateCollegeRequest) GetLastModifyBy() string {
 	if x != nil {
 		return x.LastModifyBy
 	}
 	return ""
 }
 
-type CollegeUpdateResponse struct {
+type UpdateCollegeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *CollegeUpdateResponse) Reset() {
-	*x = CollegeUpdateResponse{}
+func (x *UpdateCollegeResponse) Reset() {
+	*x = UpdateCollegeResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_college_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -279,13 +279,13 @@ func (x *CollegeUpdateResponse) Reset() {
 	}
 }
 
-func (x *CollegeUpdateResponse) String() string {
+func (x *UpdateCollegeResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CollegeUpdateResponse) ProtoMessage() {}
+func (*UpdateCollegeResponse) ProtoMessage() {}
 
-func (x *CollegeUpdateResponse) ProtoReflect() protoreflect.Message {
+func (x *UpdateCollegeResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_college_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -297,8 +297,8 @@ func (x *CollegeUpdateResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CollegeUpdateResponse.ProtoReflect.Descriptor instead.
-func (*CollegeUpdateResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateCollegeResponse.ProtoReflect.Descriptor instead.
+func (*UpdateCollegeResponse) Descriptor() ([]byte, []int) {
 	return file_college_proto_rawDescGZIP(), []int{3}
 }
 
@@ -306,8 +306,8 @@ var File_college_proto protoreflect.FileDescriptor
 
 var file_college_proto_rawDesc = []byte{
 	0x0a, 0x0d, 0x63, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
-	0x03, 0x61, 0x64, 0x64, 0x22, 0xc9, 0x01, 0x0a, 0x11, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65,
-	0x41, 0x64, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64,
+	0x03, 0x61, 0x64, 0x64, 0x22, 0xc9, 0x01, 0x0a, 0x11, 0x41, 0x64, 0x64, 0x43, 0x6f, 0x6c, 0x6c,
+	0x65, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x49, 0x64,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x49, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x4e, 0x61,
 	0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x12,
 	0x0a, 0x04, 0x43, 0x6f, 0x64, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x43, 0x6f,
@@ -319,9 +319,9 @@ var file_college_proto_rawDesc = []byte{
 	0x72, 0x69, 0x63, 0x74, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x44, 0x69, 0x73, 0x74,
 	0x72, 0x69, 0x63, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x42, 0x79,
 	0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x42, 0x79,
-	0x22, 0x14, 0x0a, 0x12, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x41, 0x64, 0x64, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xd4, 0x01, 0x0a, 0x14, 0x43, 0x6f, 0x6c, 0x6c, 0x65,
-	0x67, 0x65, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x22, 0x14, 0x0a, 0x12, 0x41, 0x64, 0x64, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xd4, 0x01, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
 	0x0e, 0x0a, 0x02, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x49, 0x64, 0x12,
 	0x12, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x4e,
 	0x61, 0x6d, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x43, 0x6f, 0x64, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28,
@@ -334,19 +334,19 @@ var file_college_proto_rawDesc = []byte{
 	0x08, 0x44, 0x69, 0x73, 0x74, 0x72, 0x69, 0x63, 0x74, 0x12, 0x22, 0x0a, 0x0c, 0x4c, 0x61, 0x73,
 	0x74, 0x4d, 0x6f, 0x64, 0x69, 0x66, 0x79, 0x42, 0x79, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52,
 	0x0c, 0x4c, 0x61, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x69, 0x66, 0x79, 0x42, 0x79, 0x22, 0x17, 0x0a,
-	0x15, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65,
+	0x15, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0x90, 0x01, 0x0a, 0x07, 0x43, 0x6f, 0x6c, 0x6c, 0x65,
 	0x67, 0x65, 0x12, 0x3d, 0x0a, 0x0a, 0x41, 0x64, 0x64, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65,
-	0x12, 0x16, 0x2e, 0x61, 0x64, 0x64, 0x2e, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x41, 0x64,
-	0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x17, 0x2e, 0x61, 0x64, 0x64, 0x2e, 0x43,
-	0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x41, 0x64, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x12, 0x16, 0x2e, 0x61, 0x64, 0x64, 0x2e, 0x41, 0x64, 0x64, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67,
+	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x17, 0x2e, 0x61, 0x64, 0x64, 0x2e, 0x41,
+	0x64, 0x64, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x12, 0x46, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6c, 0x6c, 0x65,
-	0x67, 0x65, 0x12, 0x19, 0x2e, 0x61, 0x64, 0x64, 0x2e, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65,
-	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e,
-	0x61, 0x64, 0x64, 0x2e, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x55, 0x70, 0x64, 0x61, 0x74,
-	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x0e, 0x5a, 0x0c, 0x2e, 0x2f, 0x63,
-	0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x72, 0x70, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x33,
+	0x67, 0x65, 0x12, 0x19, 0x2e, 0x61, 0x64, 0x64, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43,
+	0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e,
+	0x61, 0x64, 0x64, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x67,
+	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x0f, 0x5a, 0x0d, 0x2e, 0x2f, 0x63,
+	0x6f, 0x6c, 0x6c, 0x65, 0x67, 0x65, 0x2d, 0x72, 0x70, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -363,16 +363,16 @@ func file_college_proto_rawDescGZIP() []byte {
 
 var file_college_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_college_proto_goTypes = []interface{}{
-	(*CollegeAddRequest)(nil),     // 0: add.CollegeAddRequest
-	(*CollegeAddResponse)(nil),    // 1: add.CollegeAddResponse
-	(*CollegeUpdateRequest)(nil),  // 2: add.CollegeUpdateRequest
-	(*CollegeUpdateResponse)(nil), // 3: add.CollegeUpdateResponse
+	(*AddCollegeRequest)(nil),     // 0: add.AddCollegeRequest
+	(*AddCollegeResponse)(nil),    // 1: add.AddCollegeResponse
+	(*UpdateCollegeRequest)(nil),  // 2: add.UpdateCollegeRequest
+	(*UpdateCollegeResponse)(nil), // 3: add.UpdateCollegeResponse
 }
 var file_college_proto_depIdxs = []int32{
-	0, // 0: add.College.AddCollege:input_type -> add.CollegeAddRequest
-	2, // 1: add.College.UpdateCollege:input_type -> add.CollegeUpdateRequest
-	1, // 2: add.College.AddCollege:output_type -> add.CollegeAddResponse
-	3, // 3: add.College.UpdateCollege:output_type -> add.CollegeUpdateResponse
+	0, // 0: add.College.AddCollege:input_type -> add.AddCollegeRequest
+	2, // 1: add.College.UpdateCollege:input_type -> add.UpdateCollegeRequest
+	1, // 2: add.College.AddCollege:output_type -> add.AddCollegeResponse
+	3, // 3: add.College.UpdateCollege:output_type -> add.UpdateCollegeResponse
 	2, // [2:4] is the sub-list for method output_type
 	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -387,7 +387,7 @@ func file_college_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_college_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CollegeAddRequest); i {
+			switch v := v.(*AddCollegeRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -399,7 +399,7 @@ func file_college_proto_init() {
 			}
 		}
 		file_college_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CollegeAddResponse); i {
+			switch v := v.(*AddCollegeResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -411,7 +411,7 @@ func file_college_proto_init() {
 			}
 		}
 		file_college_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CollegeUpdateRequest); i {
+			switch v := v.(*UpdateCollegeRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -423,7 +423,7 @@ func file_college_proto_init() {
 			}
 		}
 		file_college_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CollegeUpdateResponse); i {
+			switch v := v.(*UpdateCollegeResponse); i {
 			case 0:
 				return &v.state
 			case 1:

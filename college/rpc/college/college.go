@@ -6,21 +6,21 @@ package college
 import (
 	"context"
 
-	"collegerpc/collegerpc"
+	"github.com/proeditor/mengnan/college/rpc/college-rpc"
 
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"
 )
 
 type (
-	CollegeAddRequest     = collegerpc.CollegeAddRequest
-	CollegeAddResponse    = collegerpc.CollegeAddResponse
-	CollegeUpdateRequest  = collegerpc.CollegeUpdateRequest
-	CollegeUpdateResponse = collegerpc.CollegeUpdateResponse
+	AddCollegeRequest     = college_rpc.AddCollegeRequest
+	AddCollegeResponse    = college_rpc.AddCollegeResponse
+	UpdateCollegeRequest  = college_rpc.UpdateCollegeRequest
+	UpdateCollegeResponse = college_rpc.UpdateCollegeResponse
 
 	College interface {
-		AddCollege(ctx context.Context, in *CollegeAddRequest, opts ...grpc.CallOption) (*CollegeAddResponse, error)
-		UpdateCollege(ctx context.Context, in *CollegeUpdateRequest, opts ...grpc.CallOption) (*CollegeUpdateResponse, error)
+		AddCollege(ctx context.Context, in *AddCollegeRequest, opts ...grpc.CallOption) (*AddCollegeResponse, error)
+		UpdateCollege(ctx context.Context, in *UpdateCollegeRequest, opts ...grpc.CallOption) (*UpdateCollegeResponse, error)
 	}
 
 	defaultCollege struct {
@@ -34,12 +34,12 @@ func NewCollege(cli zrpc.Client) College {
 	}
 }
 
-func (m *defaultCollege) AddCollege(ctx context.Context, in *CollegeAddRequest, opts ...grpc.CallOption) (*CollegeAddResponse, error) {
-	client := collegerpc.NewCollegeClient(m.cli.Conn())
+func (m *defaultCollege) AddCollege(ctx context.Context, in *AddCollegeRequest, opts ...grpc.CallOption) (*AddCollegeResponse, error) {
+	client := college_rpc.NewCollegeClient(m.cli.Conn())
 	return client.AddCollege(ctx, in, opts...)
 }
 
-func (m *defaultCollege) UpdateCollege(ctx context.Context, in *CollegeUpdateRequest, opts ...grpc.CallOption) (*CollegeUpdateResponse, error) {
-	client := collegerpc.NewCollegeClient(m.cli.Conn())
+func (m *defaultCollege) UpdateCollege(ctx context.Context, in *UpdateCollegeRequest, opts ...grpc.CallOption) (*UpdateCollegeResponse, error) {
+	client := college_rpc.NewCollegeClient(m.cli.Conn())
 	return client.UpdateCollege(ctx, in, opts...)
 }
